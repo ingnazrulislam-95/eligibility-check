@@ -1,0 +1,193 @@
+{
+  "levels": {
+    "bachelor": {
+      "label": "Bachelor's",
+      "qual": "secondary",
+      "minPct": 60,
+      "ielts": 5.5,
+      "toefl": 70,
+      "entrance": true
+    },
+    "master": {
+      "label": "Master's",
+      "qual": "bachelor",
+      "minPct": 65,
+      "ielts": 6,
+      "toefl": 80,
+      "entrance": false
+    },
+    "phd": {
+      "label": "PhD",
+      "qual": "master",
+      "minPct": 70,
+      "ielts": 6,
+      "toefl": 80,
+      "entrance": false
+    }
+  },
+  "unis": [
+    {
+      "name": "Charles University",
+      "cz": "Univerzita Karlova",
+      "url": "https://www.cuni.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    },
+    {
+      "name": "Czech Technical University in Prague",
+      "cz": "České vysoké učení technické v Praze",
+      "url": "https://www.cvut.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    },
+    {
+      "name": "Masaryk University",
+      "cz": "Masarykova univerzita",
+      "url": "https://www.muni.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    },
+    {
+      "name": "Brno University of Technology",
+      "cz": "Vysoké učení technické v Brně",
+      "url": "https://www.vut.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    },
+    {
+      "name": "Palacký University Olomouc",
+      "cz": "Univerzita Palackého v Olomouci",
+      "url": "https://www.upol.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    },
+    {
+      "name": "Prague University of Economics and Business",
+      "cz": "Vysoká škola ekonomická v Praze",
+      "url": "https://www.vse.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    },
+    {
+      "name": "Mendel University in Brno",
+      "cz": "Mendelova univerzita v Brně",
+      "url": "https://www.mendelu.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    },
+    {
+      "name": "University of West Bohemia in Pilsen",
+      "cz": "Západočeská univerzita v Plzni",
+      "url": "https://www.zcu.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    },
+    {
+      "name": "Technical University of Liberec",
+      "cz": "Technická univerzita v Liberci",
+      "url": "https://www.tul.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    },
+    {
+      "name": "VSB – Technical University of Ostrava",
+      "cz": "VŠB – Technická univerzita Ostrava",
+      "url": "https://www.vsb.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    },
+    {
+      "name": "Czech University of Life Sciences Prague",
+      "cz": "Česká zemědělská univerzita v Praze",
+      "url": "https://www.czu.cz",
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "published": true,
+      "verified": false,
+      "lastVerified": "",
+      "editor": "demo"
+    }
+  ],
+  "assoc": {
+    "name": "Bangladeshi Czech Students and Alumni Association",
+    "about": "",
+    "mission": "",
+    "join": "",
+    "email": "",
+    "website": "",
+    "facebook": ""
+  }
+}

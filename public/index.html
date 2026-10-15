@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Study Eligibility Check for Bangladeshi Incoming Students in CZ</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fa;--surf:#fff;--ink:#14243b;--mut:#55627a;--line:#d6dce6;--fb:#1877f2;--royal:#1a3a94;--brand:#1a3a94;--brand-ink:#fff;--accent:#c8102e;--ok:#1b6b3a;--okb:#e3f3e9;--warn:#8a5a00;--warnb:#fdf1d8;--bad:#a3182b;--badb:#fbe5e8;--inf:#3b4a63;--infb:#e8ecf3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#0e1624;--surf:#16212f;--ink:#e8edf5;--mut:#a3afc2;--line:#2b3a50;--brand:#7fb2ee;--brand-ink:#0b1626;--accent:#ff6b7f;--ok:#7fd69b;--okb:#15331f;--warn:#f0c15a;--warnb:#3a2d0f;--bad:#ff8c9b;--badb:#40161d;--inf:#b9c5da;--infb:#222f44}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#0e1624;--surf:#16212f;--ink:#e8edf5;--mut:#a3afc2;--line:#2b3a50;--brand:#7fb2ee;--brand-ink:#0b1626;--accent:#ff6b7f;--ok:#7fd69b;--okb:#15331f;--warn:#f0c15a;--warnb:#3a2d0f;--bad:#ff8c9b;--badb:#40161d;--inf:#b9c5da;--infb:#222f44}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Public Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(2rem,6vw,3.2rem)}h2{font-size:1.6rem}h3{font-size:1.15rem}
+a{color:var(--brand)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header.top{background:linear-gradient(90deg,var(--royal),var(--fb));color:#fff}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.logo{font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:1.1rem;color:#fff;text-decoration:none}
+.logo span{display:inline-block;width:10px;height:10px;background:#fff;margin-right:8px;border-radius:2px}
+.btn{display:inline-block;font:600 1rem "Public Sans",sans-serif;padding:13px 22px;border-radius:8px;border:2px solid var(--brand);background:var(--brand);color:var(--brand-ink);cursor:pointer;text-decoration:none}
+.btn.sec{background:transparent;color:var(--brand)}
+.btn.sm{padding:7px 14px;font-size:.9rem}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.hero{padding:0 0 36px}
+.band{margin:24px 0 8px;padding:32px 24px;border-radius:14px;color:#fff;background:linear-gradient(135deg,var(--royal) 0%,#1f56c4 55%,var(--fb) 100%)}
+.band h1{font-size:clamp(1.7rem,5.5vw,2.6rem);margin:0 0 .4em;color:#fff}
+.band p{color:#e6efff!important;margin:0 0 1em}
+.band .btn{background:#fff;border-color:#fff;color:var(--royal)}
+.band .btn:focus-visible{outline-color:#fff}
+header.top .btn.sec{color:#fff;border-color:#fff}
+.navl{display:flex;gap:8px}
+textarea.txt{font-family:inherit;font-size:1rem;min-height:90px}
+.hero p{font-size:1.15rem;color:var(--mut);max-width:34em}
+.facts{display:grid;gap:12px;margin:28px 0;padding:0;list-style:none}
+.facts li{background:var(--surf);border-left:4px solid var(--brand);padding:12px 16px;border-radius:0 8px 8px 0}
+.facts b{display:block}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:18px}
+.prog{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:18px 0 6px}
+.prog i{display:block;height:100%;background:var(--brand);transition:width .25s}
+.fld{margin-bottom:18px}
+label,.lbl{display:block;font-weight:600;margin-bottom:6px}
+.hint{font-size:.88rem;color:var(--mut);margin-top:4px}
+input,select,textarea{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+input[readonly]{background:var(--infb);color:var(--inf);font-weight:600}
+textarea{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;min-height:220px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:10px}
+.err{color:var(--bad);font-size:.9rem;margin-top:4px}
+.stat{padding:18px;border-radius:10px;margin-bottom:18px}
+.stat h2{margin:0 0 6px}
+.s-likely{background:var(--okb);color:var(--ok)}.s-pot{background:var(--warnb);color:var(--warn)}.s-miss{background:var(--badb);color:var(--bad)}.s-info{background:var(--infb);color:var(--inf)}
+.stat p{margin:0;color:var(--ink)}
+.stat.s-green{background:#1f7a3d;color:#fff}.stat.s-green h2,.stat.s-green p{color:#fff}
+ul.l{padding-left:20px;margin:0}ul.l li{margin-bottom:6px}
+.tag{font-size:.78rem;border:1px solid var(--line);border-radius:20px;padding:2px 9px;color:var(--mut);white-space:nowrap}
+.notice{font-size:.88rem;color:var(--mut);border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
+footer{padding:30px 0 50px;color:var(--mut);font-size:.88rem}
+.redcard{border:2px solid var(--bad);background:var(--badb)}.redcard h3,.redcard li{color:var(--bad)}.redcard li::marker{content:"\2717  "}
+.hide{display:none!important}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+@media print{header.top,.nav,.noprint,footer{display:none!important}body{background:#fff;color:#000}.card,.stat{border:1px solid #999;break-inside:avoid}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="#home"><span></span>StudyCZ Check</a><span class="navl"><a class="btn sm sec" href="#association">Association</a><a class="btn sm sec" href="#check">Free check</a></span></div></header>
+
+<main class="wrap" id="app"></main>
+
+<footer><div class="wrap">
+<p><b>Privacy:</b> This tool runs in your browser. Your answers are not sent anywhere, and it never asks for passport numbers, passwords or bank details. <b>Terms:</b> The result is a preliminary guide, not an admission or visa decision. Rules differ by university, programme, nationality and intake year. Admission eligibility is separate from visa eligibility.</p>
+<p><a href="#admin">Admin (demo)</a></p>
+</div></footer>
+
+<script src="config.js"></script>
+<script>
+/* ============ 1. RULES & DATA (admin-editable; stored in localStorage) ============
+   All thresholds below are DEMONSTRATION values, not verified admission rules.
+   In production, move this object into a database table (see README notes in the chat reply). */
+const DEFAULTS = {
+  levels: {
+    bachelor: {label:"Bachelor's", qual:"secondary", minPct:60, ielts:5.5, toefl:70, entrance:true},
+    master:   {label:"Master's",   qual:"bachelor",  minPct:65, ielts:6.0, toefl:80, entrance:false},
+    phd:      {label:"PhD",        qual:"master",    minPct:70, ielts:6.0, toefl:80, entrance:false}
+  },
+  unis: [
+    {name:"Charles University", cz:"Univerzita Karlova", url:"https://www.cuni.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"},
+    {name:"Czech Technical University in Prague", cz:"České vysoké učení technické v Praze", url:"https://www.cvut.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"},
+    {name:"Masaryk University", cz:"Masarykova univerzita", url:"https://www.muni.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"},
+    {name:"Brno University of Technology", cz:"Vysoké učení technické v Brně", url:"https://www.vut.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"},
+    {name:"Palacký University Olomouc", cz:"Univerzita Palackého v Olomouci", url:"https://www.upol.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"},
+    {name:"Prague University of Economics and Business", cz:"Vysoká škola ekonomická v Praze", url:"https://www.vse.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"},
+    {name:"Mendel University in Brno", cz:"Mendelova univerzita v Brně", url:"https://www.mendelu.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"},
+    {name:"University of West Bohemia in Pilsen", cz:"Západočeská univerzita v Plzni", url:"https://www.zcu.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"},
+    {name:"Technical University of Liberec", cz:"Technická univerzita v Liberci", url:"https://www.tul.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"},
+    {name:"VSB – Technical University of Ostrava", cz:"VŠB – Technická univerzita Ostrava", url:"https://www.vsb.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"},
+    {name:"Czech University of Life Sciences Prague", cz:"Česká zemědělská univerzita v Praze", url:"https://www.czu.cz", levels:["bachelor","master","phd"], published:true, verified:false, lastVerified:"", editor:"demo"}
+  ]
+};
+DEFAULTS.assoc = {name:"Bangladeshi Czech Students and Alumni Association", about:"", mission:"", join:"", email:"", website:"", facebook:""};
+const store = {
+  get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+let RULES = store.get("cz_rules", DEFAULTS);
+const assocData = () => Object.assign({}, DEFAULTS.assoc, RULES.assoc||{});
+
+/* ============ BACKEND CONNECTION ============
+   If server.js is running, rules, admin login and statistics come from the server.
+   If not (for example plain GitHub Pages), the page falls back to browser-only mode.
+   For a separately hosted backend, set window.CZ_API_BASE in config.js. */
+const API_BASE = window.CZ_API_BASE || "";
+let BACKEND = false, TOKEN = null, REMOTE = {stats:null, audit:null};
+try{ TOKEN = sessionStorage.getItem("cz_token"); }catch(e){}
+async function api(path, opt={}){
+  const h = Object.assign({}, opt.headers||{});
+  if(opt.body) h["Content-Type"]="application/json";
+  if(opt.auth && TOKEN) h.Authorization="Bearer "+TOKEN;
+  return fetch(API_BASE+path, Object.assign({}, opt, {headers:h}));
+}
+async function loadBackend(){
+  try{
+    const r = await api("/api/rules");
+    if(!r.ok || !(r.headers.get("content-type")||"").includes("json")) return;
+    RULES = await r.json(); BACKEND = true;
+  }catch(e){}
+}
+
+/* ============ 2. QUESTIONNAIRE DEFINITION ============ */
+const QRANK = {secondary:1, bachelor:2, bachelor3:2, bachelor4:2, master:3};
+const COUNTRIES = "Afghanistan,Albania,Algeria,Andorra,Angola,Antigua and Barbuda,Argentina,Armenia,Australia,Austria,Azerbaijan,Bahamas,Bahrain,Bangladesh,Barbados,Belarus,Belgium,Belize,Benin,Bhutan,Bolivia,Bosnia and Herzegovina,Botswana,Brazil,Brunei,Bulgaria,Burkina Faso,Burundi,Cabo Verde,Cambodia,Cameroon,Canada,Central African Republic,Chad,Chile,China,Colombia,Comoros,Congo (Republic),Congo (Democratic Republic),Costa Rica,Cote d'Ivoire,Croatia,Cuba,Cyprus,Czechia,Denmark,Djibouti,Dominica,Dominican Republic,Ecuador,Egypt,El Salvador,Equatorial Guinea,Eritrea,Estonia,Eswatini,Ethiopia,Fiji,Finland,France,Gabon,Gambia,Georgia,Germany,Ghana,Greece,Grenada,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Honduras,Hungary,Iceland,India,Indonesia,Iran,Iraq,Ireland,Israel,Italy,Jamaica,Japan,Jordan,Kazakhstan,Kenya,Kiribati,Kosovo,Kuwait,Kyrgyzstan,Laos,Latvia,Lebanon,Lesotho,Liberia,Libya,Liechtenstein,Lithuania,Luxembourg,Madagascar,Malawi,Malaysia,Maldives,Mali,Malta,Marshall Islands,Mauritania,Mauritius,Mexico,Micronesia,Moldova,Monaco,Mongolia,Montenegro,Morocco,Mozambique,Myanmar,Namibia,Nauru,Nepal,Netherlands,New Zealand,Nicaragua,Niger,Nigeria,North Korea,North Macedonia,Norway,Oman,Pakistan,Palau,Palestine,Panama,Papua New Guinea,Paraguay,Peru,Philippines,Poland,Portugal,Qatar,Romania,Russia,Rwanda,Saint Kitts and Nevis,Saint Lucia,Saint Vincent and the Grenadines,Samoa,San Marino,Sao Tome and Principe,Saudi Arabia,Senegal,Serbia,Seychelles,Sierra Leone,Singapore,Slovakia,Slovenia,Solomon Islands,Somalia,South Africa,South Korea,South Sudan,Spain,Sri Lanka,Sudan,Suriname,Sweden,Switzerland,Syria,Taiwan,Tajikistan,Tanzania,Thailand,Timor-Leste,Togo,Tonga,Trinidad and Tobago,Tunisia,Turkey,Turkmenistan,Tuvalu,Uganda,Ukraine,United Arab Emirates,United Kingdom,United States,Uruguay,Uzbekistan,Vanuatu,Vatican City,Venezuela,Vietnam,Yemen,Zambia,Zimbabwe,Other".split(",");
+const STEPS = [
+ {title:"About you", f:[
+  {id:"nat",t:"text",l:"Nationality",req:1,fixed:"Bangladeshi",hint:"This checker is for Bangladeshi students."},
+  {id:"edu_country",t:"select",l:"Country of your previous education",o:COUNTRIES,req:1,def:"Bangladesh"},
+  {id:"intake",t:"select",l:"Intended intake year",o:["2027","2028","2029","Not sure yet"],req:1},
+  {id:"lang",t:"select",l:"Preferred language of study",o:[["en","English"],["cs","Czech"]],req:1}]},
+ {title:"Study level and academics", f:[
+  {id:"level",t:"select",l:"Level you want to study",o:[["bachelor","Bachelor's"],["master","Master's"],["phd","PhD"]],req:1},
+  {id:"qual",t:"select",l:"Highest qualification completed",o:[["secondary","HSC passed"],["bachelor3","Bachelor's degree, 3 years"],["bachelor4","Bachelor's degree, 4 years (honours)"],["master","Master's degree"],["inprog","Final year, not yet completed"],["other","Other"]],req:1},
+  {id:"inst",t:"text",l:"School or university name"},
+  {id:"year",t:"number",l:"Graduation year"},
+  {id:"field",t:"text",l:"Previous field of study",hint:"For example: Computer Science, Business, Biology."},
+  {id:"scale",t:"select",l:"Grading system",o:[["pct","Percentage (0 to 100)"],["gpa4","GPA out of 4.0"]],req:1},
+  {id:"grade",t:"number",l:"Your overall result",req:1,step:"0.01"}]},
+ {title:"Field of study", f:[
+  {id:"sfield",t:"select",l:"Which field would you like to study?",o:[["business","Business"],["it","IT and computer science"],["engineering","Engineering"],["science","Natural sciences"],["health","Health and medicine"],["social","Social sciences"],["arts","Arts and humanities"],["other","Other"]],req:1}]},
+ {title:"Language and admission", f:[
+  {id:"langev",t:"select",l:"Language evidence",o:[["ielts","IELTS Academic"],["toefl","TOEFL iBT"],["moi","Medium of instruction (MOI) in the study language"],["cs_cert","Czech language certificate"],["none","None yet"]],req:1},
+  {id:"score",t:"number",l:"Test score",step:"0.5",show:s=>["ielts","toefl"].includes(s.langev)},
+  {id:"entrance",t:"select",l:"Entrance exam (if your programme asks for one)",o:[["na","Not required or not sure"],["passed","Passed"],["planned","Planned"],["no","Not taken"]],show:s=>s.level!=="bachelor"},
+  {id:"proposal",t:"select",l:"Research proposal",o:[["yes","I have one"],["draft","In draft"],["no","Not yet"]],show:s=>s.level==="phd",req:1},
+  {id:"supervisor",t:"select",l:"Supervisor",o:[["yes","Supervisor agreed"],["talk","In contact"],["no","Not yet"]],show:s=>s.level==="phd",req:1}]},
+ {title:"Admission requirements", f:[
+  {t:"note",title:"Mandatory: GAP test",text:"Every Bachelor's applicant must pass the GAP test set by the university. Check the test dates and format on the university's official website.",show:s=>s.level==="bachelor"},
+  {t:"note",title:"Needed: Nostrification / Internal Evaluation",text:"Your previous qualification needs nostrification or an internal evaluation by the university, depending on the university. Ask your chosen university which one applies and how to start.",show:s=>s.level!=="bachelor"}]}
+];
+
+/* ============ 3. ELIGIBILITY ENGINE ============ */
+function assess(a){
+  const R = RULES.levels[a.level], missing=[], pending=[], strengths=[], notes=[];
+  const pct = a.scale==="gpa4" ? (+a.grade/4)*100 : +a.grade;
+  // Qualification
+  if(a.qual==="inprog") notes.push("Final year: if you receive all your final results and your certificate before January "+(new Date().getFullYear()+1)+", you are safe to proceed. Confirm the exact deadline with your university.");
+  else if(a.qual==="other") pending.push("Your qualification type needs checking by the university against "+R.label+" entry requirements.");
+  else if(a.level==="master" && a.qual==="bachelor3" && /bangladesh/i.test(a.edu_country||"")) missing.push("Not eligible: a 3-year Bachelor's degree from Bangladesh does not meet the usual Master's entry requirement. A 4-year (honours) Bachelor's, or additional study, is normally needed. Confirm with the university.");
+  else if(QRANK[a.qual] >= QRANK[R.qual]) strengths.push("Your qualification level fits "+R.label+" entry.");
+  else missing.push(R.label+" study usually needs a completed "+({secondary:"HSC (Higher Secondary Certificate)",bachelor:"Bachelor's degree",master:"Master's degree"})[R.qual]+".");
+  // Grade
+  if(isNaN(pct)) {} else if(pct >= R.minPct) strengths.push("Your academic result (about "+Math.round(pct)+"%) meets the requirement for this level.");
+  else missing.push("Your academic result (about "+Math.round(pct)+"%) is below the requirement for this level. Some programmes may still consider you.");
+  // Language
+  if(a.lang==="en"){
+    if(a.langev==="moi") strengths.push("Language requirement counted as passed through your MOI (English). Keep your MOI certificate ready: universities decide whether to accept it.");
+    else if(a.langev==="ielts"){ if(+a.score>=R.ielts) strengths.push("Your IELTS score ("+a.score+") meets the requirement."); else missing.push("Your IELTS score ("+a.score+") is below the requirement."); }
+    else if(a.langev==="toefl"){ if(+a.score>=R.toefl) strengths.push("Your TOEFL score ("+a.score+") meets the requirement."); else missing.push("Your TOEFL score ("+a.score+") is below the requirement."); }
+    else if(a.langev==="cs_cert") pending.push("You chose English as study language, but gave a Czech certificate. Confirm which language the programme uses.");
+    else if(a.level==="phd") missing.push("No English proficiency evidence yet.");
+    else notes.push("English proficiency test (IELTS, TOEFL or MOI) is not mandatory for Bachelor's and Master's applicants. Some universities may still ask for it, so check your chosen university.");
+  } else {
+    if(a.langev==="moi") strengths.push("Language requirement counted as passed through your MOI (Czech). Keep your MOI certificate ready: universities decide whether to accept it.");
+    else if(a.langev==="cs_cert") {strengths.push("You have a Czech certificate."); pending.push("Check the level (often B2) the programme needs.");}
+    else missing.push("Czech-taught programmes normally need proof of Czech. You have none yet.");
+  }
+  // Entrance exam
+  if(R.entrance && a.level!=="bachelor"){ if(a.entrance==="passed") strengths.push("Entrance exam passed."); else if(a.entrance==="planned") pending.push("Complete your entrance exam."); else pending.push("Check whether your programme requires an entrance exam."); }
+  // PhD
+  if(a.level==="phd"){
+    if(a.proposal==="yes") strengths.push("Research proposal ready."); else missing.push("A PhD application normally needs a research proposal.");
+    if(a.supervisor==="yes") strengths.push("Supervisor agreed."); else pending.push("Supervisor availability must be confirmed.");
+  }
+  // Documents & money
+  // Mandatory steps: shown as items to verify, never as disqualification.
+  if(a.level==="bachelor") pending.push("Mandatory: pass the GAP test set by the university.");
+  else pending.push("Needed: nostrification / internal evaluation of your previous qualification (depends on the university).");
+
+  let status = missing.length ? "miss" : pending.length ? "pot" : "likely";
+  return {status, missing, pending, strengths, notes, pct};
+}
+const STATUS = {
+ likely:{c:"s-green",t:"Likely eligible based on your answers",d:"Your answers meet the requirements we check for this level. Confirm the exact requirements with the university."},
+ pot:{c:"s-green",t:"Eligible",d:"No hard blockers found. This is a preliminary result: check the items below with the university before you apply. Admission is not guaranteed."},
+ miss:{c:"s-miss",t:"Additional requirements not yet met",d:"Some requirements are missing. The list below shows what to work on."},
+ info:{c:"s-info",t:"Not enough information to decide",d:"Answer the highlighted questions to get a result."}
+};
+const GUIDE = [
+ {t:"Step 1: Apply",i:["Application period: from mid-December until the last week of February, sometimes about 2 weeks longer.","Nostrification or Internal Evaluation: start this after you apply. It can take about 2 months in total."]},
+ {t:"Step 2: After admission",i:["Tuition fees: pay the fees for your course.","Dormitory: apply and pay as soon as you can, so you can get a dormitory allocation.","The university sends your documents by courier. Then ask for a Czech embassy appointment.","At this stage, prepare your bank statement, a dual-currency card and your police clearance certificate."]},
+ {t:"Step 3: Czech embassy application (Delhi)",i:["Appointments are hard to get, but still possible.","Right now, slots open on the first Monday of every month, from 11:00 to 17:00 Indian time."]},
+ {t:"Step 4: Indian dual-entry visa and embassy interview",i:["With all your university papers, arrange an Indian dual-entry visa.","Go to the embassy interview. If the result is yes, buy insurance.","Some students face a second interview, and the embassy may ask for your bank details again."]}
+];
+const DOCS = ["Passport copy (for identity, no number needed here)","Academic transcripts and diploma or certificate","Certified translations if required","Language certificate or proof of language of instruction","CV, plus research proposal for PhD","Proof of recognition (nostrification), if required"];
+
+/* ============ 4. UI ============ */
+const $app = document.getElementById("app");
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let ans = {}, step = 0;
+
+function route(){
+  const h = location.hash.replace("#","")||"home";
+  if(h==="check") return wizard();
+  if(h==="admin") return admin();
+  if(h==="association") return association();
+  home();
+}
+function association(){
+  const d=assocData(), safe=u=>/^https?:\/\//i.test(u)?u:"", blk=(t,x)=>x?`<div class="card"><h3>${t}</h3><p style="margin:0;white-space:pre-line">${esc(x)}</p></div>`:"";
+  const links=[d.email?`<li>Email: <a href="mailto:${esc(d.email)}">${esc(d.email)}</a></li>`:"",safe(d.website)?`<li>Website: <a href="${esc(safe(d.website))}" target="_blank" rel="noopener">${esc(safe(d.website))}</a></li>`:"",safe(d.facebook)?`<li>Facebook: <a href="${esc(safe(d.facebook))}" target="_blank" rel="noopener">${esc(safe(d.facebook))}</a></li>`:""].join("");
+  const any=d.about||d.mission||d.join||links;
+  $app.innerHTML=`<section style="padding:28px 0"><h1 style="font-size:clamp(1.6rem,5vw,2.4rem)">${esc(d.name)}</h1>
+   <p class="hint">Community of Bangladeshi students and alumni in Czechia.</p>
+   ${any?blk("About us",d.about)+blk("What we do",d.mission)+blk("How to join",d.join)+(links?`<div class="card"><h3>Contact</h3><ul class="l">${links}</ul></div>`:""):'<div class="card"><p style="margin:0">Details about the association will be added soon.</p></div>'}
+   <p class="notice">This page is written by the association or the site admin. This checker does not verify it. Always confirm details with the association directly.</p></section>`;
+}
+function home(){
+  $app.innerHTML = `<section class="hero"><div class="band">
+   <h1>Study Eligibility Check for Bangladeshi Incoming Students in CZ</h1>
+   <p>Answer a few questions about your education and language skills. You get a plain-language result, a document checklist and next steps. Free, no account needed.</p>
+   <p><a class="btn" href="#check" id="cta">Check My Eligibility — Free</a></p></div>
+   <ul class="facts">
+    <li><b>Free</b>The whole checker and the printable report cost nothing.</li>
+    <li><b>Bachelor's, Master's and PhD</b>Each level has its own rules.</li>
+    <li><b>Honest results</b>You see why you got a result, not just a score. Admission is never guaranteed.</li>
+   </ul></section>`;
+}
+function wizard(){
+  const S = STEPS[step], vis = S.f.filter(f=>!f.show||f.show(ans));
+  const pctw = Math.round((step)/STEPS.length*100);
+  $app.innerHTML = `<div class="prog" role="progressbar" aria-valuenow="${pctw}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pctw+100/STEPS.length/2}%"></i></div>
+  <p class="hint">Step ${step+1} of ${STEPS.length}</p>
+  <div class="card"><h2>${S.title}</h2><form id="f" novalidate>${vis.map(field).join("")}</form></div>
+  <div class="nav"><button class="btn sec" id="back" ${step?"":"disabled"}>Back</button><button class="btn" id="next">${step===STEPS.length-1?"See my result":"Next"}</button></div>`;
+  document.getElementById("back").onclick=()=>{save(S);step--;wizard()};
+  document.getElementById("next").onclick=()=>{save(S); if(validate(S)){ if(step===STEPS.length-1) results(); else {step++;wizard();scrollTo(0,0)} }};
+  // Re-render on selects that reveal other fields
+  $app.querySelectorAll("select").forEach(s=>s.addEventListener("change",()=>{save(S);const y=scrollY;wizard();scrollTo(0,y)}));
+}
+function field(f){
+  if(f.t==="note") return `<div class="stat s-pot" role="note"><h3>${esc(f.title)}</h3><p>${esc(f.text)}</p></div>`;
+  if(f.fixed) ans[f.id]=f.fixed;
+  if(f.def && ans[f.id]===undefined) ans[f.id]=f.def;
+  const v = ans[f.id]??"";
+  let inp;
+  if(f.t==="select") inp = `<select id="${f.id}"><option value="">Choose…</option>${f.o.map(o=>{const [val,lab]=Array.isArray(o)?o:[o,o];return `<option value="${esc(val)}" ${v===val?"selected":""}>${esc(lab)}</option>`}).join("")}</select>`;
+  else inp = `<input id="${f.id}" type="${f.t}" value="${esc(v)}" ${f.fixed?"readonly":""} ${f.step?`step="${f.step}"`:""} ${f.t==="number"?'inputmode="decimal"':""}>`;
+  return `<div class="fld"><label for="${f.id}">${f.l}${f.req?"":' <span class="hint">(optional)</span>'}</label>${inp}${f.hint?`<div class="hint">${f.hint}</div>`:""}<div class="err" id="e_${f.id}" role="alert"></div></div>`;
+}
+function save(S){ S.f.forEach(f=>{const e=document.getElementById(f.id); if(e) ans[f.id]=e.value.trim()}); }
+function validate(S){
+  let ok=true;
+  S.f.filter(f=>f.req&&(!f.show||f.show(ans))).forEach(f=>{
+    const bad = !ans[f.id]; const e=document.getElementById("e_"+f.id);
+    if(e) e.textContent = bad ? "Please answer this question." : ""; if(bad) ok=false;
+  });
+  if(S.f.some(f=>f.id==="grade")){
+    const g=+ans.grade, max=ans.scale==="gpa4"?4:100, e=document.getElementById("e_grade");
+    if(ans.grade && (g<0||g>max)){e.textContent="Enter a value between 0 and "+max+".";ok=false}
+  }
+  if(!ok){const first=$app.querySelector(".err:not(:empty)"); first&&first.scrollIntoView({block:"center"})}
+  return ok;
+}
+function results(){
+  const r = assess(ans), S = STATUS[r.status], L = RULES.levels[ans.level];
+  const st = store.get("cz_stats",{}); st[r.status]=(st[r.status]||0)+1; store.set("cz_stats",st); // anonymous counts only
+  const hist = store.get("cz_hist",[]); hist.unshift({d:new Date().toISOString().slice(0,10),level:ans.level,status:r.status}); store.set("cz_hist",hist.slice(0,10));
+  const alog = store.get("cz_log",[]); alog.push({t:new Date().toISOString().slice(0,16).replace("T"," "),level:ans.level,status:r.status,lang:ans.lang,country:ans.edu_country}); store.set("cz_log",alog.slice(-2000));
+  if(BACKEND) api("/api/assessments",{method:"POST",body:JSON.stringify({level:ans.level,status:r.status,lang:ans.lang,country:ans.edu_country,sfield:ans.sfield})}).catch(()=>{});
+  const host=x=>{try{return new URL(x).hostname.replace(/^www\./,"")}catch(e){return x}};
+  const unis = RULES.unis.filter(u=>u.published&&u.levels.includes(ans.level)&&(!u.fields||u.fields.includes(ans.sfield)));
+  const list = (a,e)=>a.length?`<ul class="l">${a.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:`<p class="hint">${e}</p>`;
+  $app.innerHTML = `<div class="stat ${S.c}"><h2>${S.t}</h2><p>${S.d}</p></div>
+  ${ans.level==="bachelor"?'<div class="stat s-pot" role="note"><h3><span aria-hidden="true">&#9888; </span>Mandatory: GAP test</h3><p>For a Bachelor\'s programme, you must pass the GAP test set by the university. Check the test format and dates on the university\'s official website. Without passing it, you cannot be admitted, whatever your result above.</p></div>':""}
+  <div class="card"><h3>Your strengths</h3>${list(r.strengths,"None yet. Work through the list below.")}</div>
+  <div class="card ${r.missing.length?"redcard":""}"><h3>${r.missing.length?'<span aria-hidden="true">&#10007; </span>':""}Missing requirements${r.missing.length?" ("+r.missing.length+")":""}</h3>${list(r.missing,"No hard blockers found.")}</div>
+  <div class="card"><h3>To verify before applying</h3>${list(r.pending,"Nothing pending.")}</div>
+  ${r.notes.length?`<div class="card"><h3>Good to know</h3>${list(r.notes,"")}</div>`:""}
+  <div class="card"><h3>Documents you may need</h3>${list(DOCS)}</div>
+  <div class="card"><h3>Next steps</h3>${GUIDE.map(g=>`<p style="margin:14px 0 6px"><b>${g.t}</b></p><ul class="l">${g.i.map(x=>`<li>${x}</li>`).join("")}</ul>`).join("")}<p class="hint" style="margin-top:14px">This guide comes from the site author's experience. Embassy rules, dates and appointment slots change often, so check the Czech embassy's official website before you act. Admission and visa are separate processes.</p></div>
+  <div class="card"><h3>Universities to explore <span class="tag">demo data, unverified</span></h3>
+   ${unis.length?`<ul class="l">${unis.map(u=>`<li><a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.name)}</a>${u.cz?" ("+esc(u.cz)+")":""}<br><span class="hint">Website: ${esc(host(u.url))}</span> <span class="tag">${u.verified?"verified "+esc(u.lastVerified):"not verified"}</span></li>`).join("")}</ul>`:'<p class="hint">No published universities for this level yet.</p>'}
+   <p class="hint">General information: <a href="https://www.studyin.cz" target="_blank" rel="noopener">StudyIn.cz</a> and the <a href="https://www.msmt.gov.cz" target="_blank" rel="noopener">Ministry of Education</a>. Always confirm on the university's own website.</p></div>
+  <p class="notice">Assessment for ${esc(ans.nat)}, ${esc(L.label)}, field: ${esc((STEPS.flatMap(x=>x.f).find(f=>f.id==="sfield").o.find(o=>o[0]===ans.sfield)||[0,ans.sfield])[1])}, intake ${esc(ans.intake)}, generated ${new Date().toLocaleDateString()}. Preliminary guide only. No admission is guaranteed, and requirements vary by university, programme, nationality and intake year.</p>
+  <div class="nav noprint"><button class="btn sec" id="again">Start over</button><button class="btn" id="print">Print or save report</button></div>`;
+  document.getElementById("print").onclick=()=>print();
+  document.getElementById("again").onclick=()=>{ans={};step=0;location.hash="#check";wizard()};
+  scrollTo(0,0);
+}
+
+/* ============ 5. ADMIN (DEMO) ============
+   NOTE: This panel is NOT secure. Anyone can open it. Real admin login, roles and a shared database
+   need a backend (Supabase/Firebase). Here it edits this browser's copy of the rules so you can
+   see the engine react. */
+/* Admin gate: the admin chooses their own ID and password on first use. Nothing is hardcoded.
+   Only a salted PBKDF2 hash is stored (in this browser). */
+let adminOK=false, fails=0;
+const hx=b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");
+async function pwHash(pw,saltHex){
+  const salt=new Uint8Array(saltHex.match(/../g).map(h=>parseInt(h,16)));
+  const k=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveBits"]);
+  return hx(await crypto.subtle.deriveBits({name:"PBKDF2",salt,iterations:150000,hash:"SHA-256"},k,256));
+}
+function admin(){
+  if(BACKEND) return remoteAdmin();
+  if(adminOK) return adminPanel();
+  const A=store.get("cz_auth",null), setup=!A;
+  $app.innerHTML=`<section style="padding:32px 0;max-width:420px"><h1 style="font-size:2rem">${setup?"Create admin login":"Admin login"}</h1>
+   <p class="hint">${setup?"Choose an ID and a password (at least 10 characters). You will use them every time you open the admin panel in this browser.":"Enter your admin ID and password."}</p>
+   <form id="g" class="card" novalidate><div class="fld"><label for="gi">Admin ID</label><input id="gi" autocomplete="username"></div>
+   <div class="fld"><label for="gp">Password</label><input id="gp" type="password" autocomplete="${setup?"new-password":"current-password"}"></div>
+   ${setup?'<div class="fld"><label for="gp2">Repeat password</label><input id="gp2" type="password" autocomplete="new-password"></div>':""}
+   <div class="err" id="ge" role="alert"></div><button class="btn" type="submit">${setup?"Create login":"Log in"}</button></form></section>`;
+  document.getElementById("g").onsubmit=async ev=>{
+    ev.preventDefault(); const id=gi.value.trim(), pw=gp.value, ge=document.getElementById("ge");
+    if(!id||!pw){ge.textContent="Enter both an ID and a password.";return}
+    if(setup){
+      if(pw.length<10){ge.textContent="Use at least 10 characters for the password.";return}
+      if(pw!==gp2.value){ge.textContent="The two passwords do not match.";return}
+      const salt=hx(crypto.getRandomValues(new Uint8Array(16)));
+      store.set("cz_auth",{id,salt,hash:await pwHash(pw,salt)}); adminOK=true; adminPanel();
+    } else {
+      if(fails>=3) await new Promise(r=>setTimeout(r,Math.min(fails,10)*1000));
+      const ok = id===A.id && await pwHash(pw,A.salt)===A.hash;
+      if(ok){fails=0;adminOK=true;adminPanel()} else {fails++;ge.textContent="ID or password is incorrect."}
+    }
+  };
+}
+/* ---------- Admin when the backend is running ---------- */
+async function remoteAdmin(){
+  if(!TOKEN) return remoteLogin();
+  try{
+    const [r1,r2,r3]=await Promise.all([api("/api/admin/rules",{auth:1}),api("/api/admin/stats",{auth:1}),api("/api/admin/audit",{auth:1})]);
+    if(r1.status===401){TOKEN=null;try{sessionStorage.removeItem("cz_token")}catch(e){} return remoteLogin("Your session ended. Log in again.")}
+    RULES=await r1.json(); REMOTE.stats=(await r2.json()).byStatus; REMOTE.audit=(await r3.json()).map(x=>x.at+" "+x.who+": "+x.action);
+    adminPanel();
+  }catch(e){$app.innerHTML='<section style="padding:32px 0"><p class="err">Could not reach the server. Reload and try again.</p></section>'}
+}
+function remoteLogin(msg){
+  $app.innerHTML=`<section style="padding:32px 0;max-width:420px"><h1 style="font-size:2rem">Admin login</h1>
+   <form id="g" class="card" novalidate><div class="fld"><label for="gi">Admin ID</label><input id="gi" autocomplete="username"></div>
+   <div class="fld"><label for="gp">Password</label><input id="gp" type="password" autocomplete="current-password"></div>
+   <div class="err" id="ge" role="alert">${esc(msg||"")}</div><button class="btn" type="submit">Log in</button></form></section>`;
+  document.getElementById("g").onsubmit=async ev=>{
+    ev.preventDefault(); const ge=document.getElementById("ge");
+    try{
+      const r=await api("/api/admin/login",{method:"POST",body:JSON.stringify({id:gi.value.trim(),password:gp.value})});
+      if(r.status===429){ge.textContent="Too many attempts. Wait a few minutes and try again.";return}
+      if(!r.ok){ge.textContent="ID or password is incorrect.";return}
+      TOKEN=(await r.json()).token; try{sessionStorage.setItem("cz_token",TOKEN)}catch(e){}
+      remoteAdmin();
+    }catch(e){ge.textContent="Could not reach the server."}
+  };
+}
+async function saveRemote(n){
+  const r=await api("/api/admin/rules",{method:"PUT",auth:1,body:JSON.stringify(n)});
+  if(!r.ok){document.getElementById("ue").textContent="Could not save: "+((await r.json().catch(()=>({}))).error||r.status);return}
+  admin();
+}
+async function downloadRemote(){
+  const w=document.getElementById("dlwrap");
+  try{
+    const r=await api("/api/admin/export.csv",{auth:1}); if(!r.ok) throw 0;
+    const a=document.createElement("a"); a.href=URL.createObjectURL(await r.blob()); a.download="eligibility-assessments.csv";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  }catch(e){w.insertAdjacentHTML("beforeend",' <span class="err">Could not download the file.</span>')}
+}
+function adminPanel(){
+  const st=BACKEND?(REMOTE.stats||{}):store.get("cz_stats",{}), log=BACKEND?(REMOTE.audit||[]):store.get("cz_audit",[]);
+  const L=RULES.levels, rows=Object.keys(L).map(k=>`<div class="card"><h3>${esc(L[k].label)}</h3><div class="row">
+   <div class="fld"><label for="p_${k}">Min result %</label><input id="p_${k}" type="number" value="${L[k].minPct}"></div>
+   <div class="fld"><label for="i_${k}">Min IELTS</label><input id="i_${k}" type="number" step="0.5" value="${L[k].ielts}"></div>
+   <div class="fld"><label for="t_${k}">Min TOEFL</label><input id="t_${k}" type="number" value="${L[k].toefl}"></div></div></div>`).join("");
+  $app.innerHTML = `<section style="padding:32px 0"><h1 style="font-size:2rem">Admin (demo)</h1>
+   ${BACKEND?'<div class="stat s-green"><p><b>Signed in.</b> Changes are saved on the server and apply to all visitors.</p></div>':'<div class="stat s-warn s-pot"><p><b>Browser lock only.</b> The ID and password protect this panel in this browser, not your data on a server. Use Supabase or Firebase Auth plus database rules for real admin security.</p></div>'}<p><button class="btn sm sec" id="lo">Log out</button></p>
+   <h2>Thresholds</h2>${rows}
+   <h2>Association page</h2><div class="card">
+   <div class="fld"><label for="a_name">Association name</label><input id="a_name" value="${esc(assocData().name)}"></div>
+   <div class="fld"><label for="a_about">About us</label><textarea class="txt" id="a_about">${esc(assocData().about)}</textarea></div>
+   <div class="fld"><label for="a_mission">What we do</label><textarea class="txt" id="a_mission">${esc(assocData().mission)}</textarea></div>
+   <div class="fld"><label for="a_join">How to join</label><textarea class="txt" id="a_join">${esc(assocData().join)}</textarea></div>
+   <div class="fld"><label for="a_email">Contact email</label><input id="a_email" type="email" value="${esc(assocData().email)}"></div>
+   <div class="fld"><label for="a_web">Website (https://…)</label><input id="a_web" value="${esc(assocData().website)}"></div>
+   <div class="fld"><label for="a_fb">Facebook page (https://…)</label><input id="a_fb" value="${esc(assocData().facebook)}"></div></div>
+   <h2>Universities</h2><div class="fld"><label for="unis">Records (JSON)</label><textarea id="unis">${esc(JSON.stringify(RULES.unis,null,1))}</textarea>
+   <div class="hint">Fields: name, cz (Czech name), url, levels, published, verified, lastVerified, editor, and optional fields (for example ["business","it"]; leave out to show for all fields). Never add fees or deadlines without an official source.</div><div class="err" id="ue"></div></div>
+   <p><button class="btn" id="sv">Save changes</button> <button class="btn sec" id="rs">Reset to defaults</button></p>
+   <h2>Anonymous statistics (${BACKEND?"all visitors":"this browser"})</h2><p>${Object.keys(STATUS).map(k=>`${STATUS[k].t}: <b>${st[k]||0}</b>`).join("<br>")}</p>
+   <p><b>Total assessments: ${Object.values(st).reduce((a,b)=>a+b,0)}</b></p><p id="dlwrap"><button class="btn sec" id="dl">Download Excel file (CSV)</button></p><p class="hint">${BACKEND?"Counts every assessment saved on the server.":"Counts only assessments completed in this browser. Run the Node.js backend to count all visitors."}</p>
+   <h2>Audit log</h2>${log.length?`<ul class="l">${log.slice(0,10).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:'<p class="hint">No changes yet.</p>'}</section>`;
+  document.getElementById("lo").onclick=()=>{adminOK=false;TOKEN=null;try{sessionStorage.removeItem("cz_token")}catch(e){}admin()};
+  document.getElementById("sv").onclick=()=>{
+    let u; try{u=JSON.parse(document.getElementById("unis").value); if(!Array.isArray(u)) throw 0}catch(e){document.getElementById("ue").textContent="Invalid JSON. Fix the university records and save again.";return}
+    const n=JSON.parse(JSON.stringify(RULES)); n.unis=u; n.assoc={name:a_name.value.trim()||DEFAULTS.assoc.name,about:a_about.value.trim(),mission:a_mission.value.trim(),join:a_join.value.trim(),email:a_email.value.trim(),website:a_web.value.trim(),facebook:a_fb.value.trim()};
+    Object.keys(n.levels).forEach(k=>{n.levels[k].minPct=+document.getElementById("p_"+k).value;n.levels[k].ielts=+document.getElementById("i_"+k).value;n.levels[k].toefl=+document.getElementById("t_"+k).value});
+    if(BACKEND){saveRemote(n);return}
+    RULES=n; store.set("cz_rules",n);
+    store.set("cz_audit",[new Date().toISOString().slice(0,16).replace("T"," ")+" rules and universities updated",...log].slice(0,50)); admin();
+  };
+  document.getElementById("dl").onclick=async()=>{
+    if(BACKEND) return downloadRemote();
+    const c=await (window.claude&&claude.use?claude.use("downloads"):null);
+    const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"', L=store.get("cz_log",[]);
+    const lab={likely:"Likely eligible",pot:"Eligible (items to verify)",miss:"Additional requirements not met",info:"Insufficient information"};
+    const csv="\ufeff"+["Date and time,Level,Result,Study language,Country of education"].concat(L.map(x=>[x.t,(RULES.levels[x.level]||{}).label||x.level,lab[x.status]||x.status,x.lang==="cs"?"Czech":"English",x.country].map(q).join(","))).join("\r\n");
+    if(!c){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download="eligibility-assessments.csv";document.body.appendChild(a);a.click();a.remove();return}
+    try{await c.save({filename:"eligibility-assessments.csv",data:csv})}catch(e){if(e&&e.code!=="declined")document.getElementById("dlwrap").insertAdjacentHTML("beforeend",' <span class="err">Could not save the file.</span>')}
+  };
+  document.getElementById("rs").onclick=()=>{if(BACKEND){saveRemote(JSON.parse(JSON.stringify(DEFAULTS)));return}RULES=DEFAULTS;store.set("cz_rules",DEFAULTS);store.set("cz_audit",[new Date().toISOString().slice(0,16).replace("T"," ")+" reset to defaults",...log]);admin()};
+}
+addEventListener("hashchange",route); route();
+loadBackend().then(()=>{ if(BACKEND && ["","#home","#association","#admin"].includes(location.hash)) route(); });
+</script>
+</body>
+</html>
